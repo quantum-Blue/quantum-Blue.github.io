@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammed Enes BAL | Robotics & Autonomous Systems</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">MEB<span>.dev</span></a>
+      <div class="nav-actions">
+        <a href="#projects" data-i18n="nav_projects">Projeler</a>
+        <a href="#skills" data-i18n="nav_skills">Yetkinlikler</a>
+        <a href="#contact" data-i18n="nav_contact">İletişim</a>
+        <button id="lang-toggle" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="eyebrow" data-i18n="hero_role">Robotik ve Otonom Sistemler Mühendisi</p>
+      <h1>Muhammed Enes BAL</h1>
+      <p class="hero-desc" data-i18n="hero_desc">
+        İnsansız hava, kara ve sualtı araçları için SLAM, sensör füzyonu, bilgisayarlı görü ve gömülü yapay zekâ sistemlerini simülasyondan fiziksel donanıma taşıyorum.
+      </p>
+      <div class="cta-group">
+        <a href="assets/pdf/Muhammed_Enes_BAL_Portfolio_TR.pdf" target="_blank" class="btn btn-primary" data-i18n="btn_pdf_tr">📄 Portfolyo (TR - PDF)</a>
+        <a href="assets/pdf/Muhammed_Enes_BAL_Portfolio_EN.pdf" target="_blank" class="btn btn-secondary" data-i18n="btn_pdf_en">📄 Portfolio (EN - PDF)</a>
+        <a href="https://github.com/quantum-Blue" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2 class="section-title" data-i18n="projects_title">Seçili Projeler</h2>
+      <p class="section-sub" data-i18n="projects_sub">Teknik detayları, katkılarımı ve kullanılan teknolojileri görmek için bir karta tıklayın.</p>
+      <div id="projects-grid" class="projects-grid"></div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2 class="section-title" data-i18n="skills_title">Teknik Yetkinlikler</h2>
+      <div id="skills-grid" class="skills-grid"></div>
+    </section>
+
+    <section id="contact" class="section container contact-box">
+      <h2 data-i18n="contact_title">Birlikte Çalışalım</h2>
+      <p data-i18n="contact_desc">Otonom sistemler, robotik ve savunma teknolojileri alanındaki fırsatlara açığım.</p>
+      <div class="contact-links">
+        <a href="mailto:muhammedenesbal1@gmail.com">muhammedenesbal1@gmail.com</a>
+        <a href="https://github.com/quantum-Blue" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/muhammed-enes-bal-5ba990249" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© 2026 Muhammed Enes BAL</p>
+  </footer>
+
+  <!-- Proje Detay Modalı -->
+  <div id="project-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+      <span id="modal-category" class="badge"></span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-summary" class="modal-summary"></p>
+      <div class="modal-block">
+        <h4 data-i18n="modal_contrib">Katkım & Teknik Detaylar</h4>
+        <ul id="modal-details"></ul>
+      </div>
+      <div id="modal-tags" class="tags"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
