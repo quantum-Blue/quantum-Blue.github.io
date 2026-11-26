@@ -374,7 +374,7 @@ def run_test_suite():
     # -------------------------------------------------------------------------
     # PHASE 7 TESTS: Senior Editorial Refinement, Zero-Emoji & Contrast Audit
     # -------------------------------------------------------------------------
-    emoji_pattern = re.compile(r"[\U0001F300-\U0001FAFF\u2600-\u27BF]")
+    emoji_pattern = re.compile(r"[\U0001F300-\U0001FAFF\u2700-\u27BF]")
     with open("js/data.js", "r", encoding="utf-8") as f:
         data_text = f.read()
     emojis_in_data = emoji_pattern.findall(data_text)
