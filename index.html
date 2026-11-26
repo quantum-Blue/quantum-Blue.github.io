@@ -29,12 +29,8 @@
   <meta property="og:image" content="assets/img/profile/hero_portrait_bw.jpeg" />
   <meta property="og:url" content="https://quantum-blue.github.io/" />
 
-  <!-- Custom Inline SVG Favicon (Tactical Autonomy Emblem) -->
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b14' stroke='%2338bdf8' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f59e0b' stroke-width='2.5' stroke-dasharray='6 4'/%3E%3Ctext x='32' y='38' font-family='monospace' font-weight='800' font-size='18' fill='%23f8fafc' text-anchor='middle'%3EMEB%3C/text%3E%3C/svg%3E"
-  />
+  <!-- Custom Modular SVG Favicon (Tactical Autonomy Emblem) -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
   <!-- Google Fonts: Inter (UI Sans) & JetBrains Mono (Telemetry Monospace) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -475,8 +471,11 @@
     </div>
   </div>
 
-  <!-- Application Data Layer & Main Controller -->
+  <!-- Modular Application Data Layer, Feature Modules & Main Orchestrator -->
   <script src="js/data.js"></script>
+  <script src="js/modules/i18n.js"></script>
+  <script src="js/modules/renderers.js"></script>
+  <script src="js/modules/modal.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
