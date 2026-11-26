@@ -1,80 +1,481 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <!-- ========================================================================
+       METADATA, SEO & OPENGRAPH CONFIGURATION
+       Muhammed Enes BAL | Robotics, Autonomous Systems & Embedded AI Portfolio
+       ======================================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammed Enes BAL | Robotics & Autonomous Systems</title>
+  <title>Muhammed Enes BAL | Robotics, Autonomous Systems &amp; Embedded AI Engineer</title>
+  <meta
+    name="description"
+    content="Muhammed Enes BAL — Robotics & Autonomous Systems Engineer. End-to-end SLAM, sensor fusion, computer vision, and embedded AI for UAV, AUV, and Level 4 UGV platforms from simulation (ROS 2, Gazebo, PX4) to physical hardware."
+  />
+  <meta
+    name="keywords"
+    content="Muhammed Enes BAL, Robotics Engineer, Autonomous Systems, ROS 2, SLAM, Fast-LIO2, RTAB-Map, PX4, Pixhawk 6X, UAV, AUV, Computer Vision, YOLOv12, RT-DETR, Embedded AI, Teknofest, TUBITAK"
+  />
+  <meta name="author" content="Muhammed Enes BAL" />
+  <meta name="theme-color" content="#070b14" />
+
+  <!-- OpenGraph / LinkedIn / Social Media Preview Card -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhammed Enes BAL | Robotics &amp; Autonomous Systems Engineer" />
+  <meta
+    property="og:description"
+    content="End-to-end SLAM, sensor fusion, computer vision, and embedded AI systems across Air (UAV), Sea (AUV), and Ground (Level 4 UGV) platforms."
+  />
+  <meta property="og:image" content="assets/img/profile/hero_portrait_bw.jpeg" />
+  <meta property="og:url" content="https://quantum-blue.github.io/" />
+
+  <!-- Custom Inline SVG Favicon (Tactical Autonomy Emblem) -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b14' stroke='%2338bdf8' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f59e0b' stroke-width='2.5' stroke-dasharray='6 4'/%3E%3Ctext x='32' y='38' font-family='monospace' font-weight='800' font-size='18' fill='%23f8fafc' text-anchor='middle'%3EMEB%3C/text%3E%3C/svg%3E"
+  />
+
+  <!-- Google Fonts: Inter (UI Sans) & JetBrains Mono (Telemetry Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Core Tactical Autonomy Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Structured Data (JSON-LD) for Search Engines & Recruiters -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammed Enes BAL",
+    "jobTitle": "Robotics and Autonomous Systems Engineer",
+    "url": "https://quantum-blue.github.io/",
+    "email": "mailto:muhammedenesbal1@gmail.com",
+    "telephone": "+90-544-347-1929",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "İstanbul Sabahattin Zaim University"
+    },
+    "knowsAbout": [
+      "Robotics",
+      "Autonomous Systems",
+      "ROS 2",
+      "SLAM",
+      "Fast-LIO2",
+      "RTAB-Map",
+      "Sensor Fusion",
+      "Computer Vision",
+      "Deep Learning",
+      "Embedded Systems",
+      "PX4 Autopilot",
+      "Unmanned Aerial Vehicles (UAV)",
+      "Autonomous Underwater Vehicles (AUV)"
+    ],
+    "sameAs": [
+      "https://github.com/quantum-Blue",
+      "https://linkedin.com/in/muhammed-enes-bal"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <!-- Top Telemetry Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+  <!-- ========================================================================
+       STICKY GLASSMORPHIC NAVIGATION BAR
+       ======================================================================== -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo">MEB<span>.dev</span></a>
-      <div class="nav-actions">
+      <a href="#" class="logo" aria-label="Muhammed Enes BAL Home">
+        MEB<span>.autonomy</span>
+        <span class="logo-tag">ROS 2 · AI</span>
+      </a>
+
+      <button
+        id="mobile-menu-btn"
+        class="mobile-menu-btn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav id="nav-actions" class="nav-actions" aria-label="Primary Navigation">
+        <a href="#about" data-i18n="nav_about">Hakkımda</a>
+        <a href="#architecture" data-i18n="nav_architecture">Sistem Mimarisi</a>
         <a href="#projects" data-i18n="nav_projects">Projeler</a>
         <a href="#skills" data-i18n="nav_skills">Yetkinlikler</a>
+        <a href="#timeline" data-i18n="nav_timeline">Deneyim &amp; Başarılar</a>
         <a href="#contact" data-i18n="nav_contact">İletişim</a>
-        <button id="lang-toggle" class="lang-btn">EN</button>
-      </div>
+        <button id="lang-toggle" class="lang-btn" type="button" aria-label="Switch Language">EN</button>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <p class="eyebrow" data-i18n="hero_role">Robotik ve Otonom Sistemler Mühendisi</p>
-      <h1>Muhammed Enes BAL</h1>
-      <p class="hero-desc" data-i18n="hero_desc">
-        İnsansız hava, kara ve sualtı araçları için SLAM, sensör füzyonu, bilgisayarlı görü ve gömülü yapay zekâ sistemlerini simülasyondan fiziksel donanıma taşıyorum.
-      </p>
-      <div class="cta-group">
-        <a href="assets/pdf/Muhammed_Enes_BAL_Portfolio_TR.pdf" target="_blank" class="btn btn-primary" data-i18n="btn_pdf_tr">📄 Portfolyo (TR - PDF)</a>
-        <a href="assets/pdf/Muhammed_Enes_BAL_Portfolio_EN.pdf" target="_blank" class="btn btn-secondary" data-i18n="btn_pdf_en">📄 Portfolio (EN - PDF)</a>
-        <a href="https://github.com/quantum-Blue" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    <!-- ======================================================================
+         01. HERO SECTION & KPI TELEMETRY STATISTICS (PDF PAGE 1 & 2)
+         ====================================================================== -->
+    <section class="hero container" id="top">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="hero_status">Otonom Sistemler, Robotik ve Savunma Teknolojileri Fırsatlarına Açık</span>
+          </div>
+
+          <span class="eyebrow" data-i18n="hero_role">Robotik ve Otonom Sistemler Mühendisi</span>
+          <h1>Muhammed Enes BAL</h1>
+          <p class="hero-subtitle-domains" data-i18n="hero_domains">
+            Robotik · Otonom Sistemler · Yapay Zekâ · Gömülü Sistemler
+          </p>
+          <p class="hero-desc" data-i18n="hero_desc">
+            İnsansız hava (İHA), kara (UGV) ve sualtı (AUV) araçları için SLAM, sensör füzyonu, bilgisayarlı görü ve gömülü yapay zekâ sistemlerini simülasyondan fiziksel donanıma uçtan uca taşıyorum.
+          </p>
+
+          <!-- Operational Triad Badges (Air · Sea · Ground) -->
+          <div class="triad-pills">
+            <span class="triad-pill">✈️ <span data-i18n="triad_air">Hava (İHA): 4B LiDAR + Stereo SLAM</span></span>
+            <span class="triad-pill">🌊 <span data-i18n="triad_sea">Sualtı (AUV): 6-İticili Biyomimetik GNC</span></span>
+            <span class="triad-pill">🚚 <span data-i18n="triad_ground">Kara (UGV): Seviye 4 Otonom Sürüş</span></span>
+          </div>
+
+          <!-- Primary Call-to-Action Buttons -->
+          <div class="cta-group">
+            <a href="#projects" class="btn btn-primary" data-i18n="btn_explore_projects">🚀 Projeleri İncele</a>
+            <a
+              href="assets/pdf/Muhammed_Enes_BAL_Portfolio_TR.pdf"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-gold"
+              data-i18n="btn_pdf_tr"
+            >
+              📄 Portfolyo (TR - PDF)
+            </a>
+            <a
+              href="assets/pdf/Muhammed_Enes_BAL_Portfolio_EN.pdf"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secondary"
+              data-i18n="btn_pdf_en"
+            >
+              📄 Portfolio (EN - PDF)
+            </a>
+            <a
+              href="https://github.com/quantum-Blue"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Portrait Frame (Extracted from PDF Page 1 Cover) -->
+        <div class="hero-visual">
+          <div class="portrait-frame">
+            <img
+              src="assets/img/profile/hero_portrait_bw.jpeg"
+              alt="Muhammed Enes BAL — Robotics & Autonomous Systems Engineer"
+              width="280"
+              height="280"
+            />
+            <span class="portrait-telemetry-badge" data-i18n="portrait_badge">SIM-TO-REAL // ROS 2 &amp; PX4</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Quantitative KPI Stat Cards (Rendered dynamically from HERO_STATS) -->
+      <div id="stats-grid" class="stats-grid" aria-label="Key Engineering Statistics"></div>
+    </section>
+
+    <!-- ======================================================================
+         02. ABOUT ME & ENGINEERING IDENTITY SECTION (PDF PAGE 2)
+         ====================================================================== -->
+    <section id="about" class="section container">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="about_kicker">HAKKIMDA · MÜHENDİSLİK PROFİLİ</span>
+        <h2 class="section-title" data-i18n="about_title">Simülasyondan Fiziksel Donanıma Uçtan Uca Otonomi</h2>
+      </div>
+
+      <div class="about-card">
+        <div class="about-photo-wrap">
+          <img
+            src="assets/img/profile/about_portrait_color.jpeg"
+            alt="Muhammed Enes BAL Portrait"
+            loading="lazy"
+            width="240"
+            height="300"
+          />
+        </div>
+        <div class="about-body">
+          <h3 data-i18n="about_heading">Bilgisayar Mühendisi | Robotik, Otonom Sistemler ve Gömülü Yapay Zekâ</h3>
+          <p data-i18n="about_p1">
+            Robotik, otonom sistemler ve yapay zekâ alanlarına odaklanan bir bilgisayar mühendisiyim. Teknofest yarışmaları, TÜBİTAK 2209-A yürütücülüğü ve BAP-100 araştırma projelerindeki deneyimimle; insansız hava, kara ve sualtı araçları, SLAM, sensör füzyonu ve bilgisayarlı görü üzerine uçtan uca sistemler geliştiriyorum.
+          </p>
+          <p data-i18n="about_p2">
+            Algoritmalarımı yalnızca simülasyon (Gazebo / PX4 / ROS 2) ortamında bırakmıyor; Pixhawk 6X, Raspberry Pi 5 + AI HAT, 4B LiDAR, özel stereo kamera düzenekleri ve sualtı itki sistemleri üzerinde fiziksel donanıma taşıyarak derin öğrenme ile gömülü sistemleri gerçek zamanlı birleştiriyorum.
+          </p>
+          <div class="about-pillars">
+            <span class="pillar-chip">Autonomous Navigation</span>
+            <span class="pillar-chip">Hybrid 3D/2D SLAM</span>
+            <span class="pillar-chip">Multi-Modal Sensor Fusion</span>
+            <span class="pillar-chip">Real-Time Computer Vision</span>
+            <span class="pillar-chip">ROS / ROS 2 &amp; PX4</span>
+            <span class="pillar-chip">Edge AI &amp; Embedded Systems</span>
+            <span class="pillar-chip">Turkish NLP (BERT)</span>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- ======================================================================
+         03. INTERACTIVE "SIM-TO-REAL" SYSTEM ARCHITECTURE EXPLORER
+         ====================================================================== -->
+    <section id="architecture" class="section container">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="explorer_kicker">SİM-TO-REAL MİMARİ LABORATUVARI</span>
+        <h2 class="section-title" data-i18n="explorer_title">Operasyon Alanlarına Göre Otonomi Boru Hattı</h2>
+        <p class="section-sub" data-i18n="explorer_sub">
+          Hava, Sualtı ve Kara platformlarında kurduğum Sensör ➔ Füzyon/SLAM ➔ Planlama/Kontrol ➔ Çıktı mimarisini incelemek için bir platform seçin.
+        </p>
+      </div>
+
+      <div class="explorer-box">
+        <div id="explorer-tabs" class="explorer-tabs" role="tablist" aria-label="Operational Domain Tabs"></div>
+        <div class="explorer-header-meta">
+          <div>
+            <h3 id="explorer-domain-title"></h3>
+            <p id="explorer-domain-subtitle"></p>
+          </div>
+        </div>
+        <div id="explorer-pipeline" class="explorer-pipeline"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         04. SELECTED TECHNICAL PROJECTS (FILTERABLE CASE STUDIES)
+         ====================================================================== -->
     <section id="projects" class="section container">
-      <h2 class="section-title" data-i18n="projects_title">Seçili Projeler</h2>
-      <p class="section-sub" data-i18n="projects_sub">Teknik detayları, katkılarımı ve kullanılan teknolojileri görmek için bir karta tıklayın.</p>
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="projects_kicker">SEÇİLİ TEKNİK PROJELER</span>
+        <h2 class="section-title" data-i18n="projects_title">Mühendislik Vaka Analizleri (Case Studies)</h2>
+        <p class="section-sub" data-i18n="projects_sub">
+          Sistem mimarisi şemalarını, kantitatif metrikleri, katkılarımı ve proje görsellerini incelemek için herhangi bir proje kartına tıklayın.
+        </p>
+      </div>
+
+      <!-- Category Filter Controls -->
+      <div id="project-filters" class="filter-bar" role="toolbar" aria-label="Project category filters"></div>
+
+      <!-- Dynamic Projects Showcase Grid -->
       <div id="projects-grid" class="projects-grid"></div>
     </section>
 
+    <!-- ======================================================================
+         05. TECHNICAL COMPETENCIES MATRIX (ALL 6 DOMAINS FROM PDF PAGE 3)
+         ====================================================================== -->
     <section id="skills" class="section container">
-      <h2 class="section-title" data-i18n="skills_title">Teknik Yetkinlikler</h2>
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="skills_kicker">YETENEKLER · TEKNİK MATRİS</span>
+        <h2 class="section-title" data-i18n="skills_title">Teknik Yetkinlikler</h2>
+        <p class="section-sub" data-i18n="skills_sub">
+          Otonom navigasyon, SLAM, bilgisayarlı görü, gömülü donanım ve derin öğrenme dikeylerinde kullandığım mühendislik araçları.
+        </p>
+      </div>
+
       <div id="skills-grid" class="skills-grid"></div>
     </section>
 
-    <section id="contact" class="section container contact-box">
-      <h2 data-i18n="contact_title">Birlikte Çalışalım</h2>
-      <p data-i18n="contact_desc">Otonom sistemler, robotik ve savunma teknolojileri alanındaki fırsatlara açığım.</p>
-      <div class="contact-links">
-        <a href="mailto:muhammedenesbal1@gmail.com">muhammedenesbal1@gmail.com</a>
-        <a href="https://github.com/quantum-Blue" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/muhammed-enes-bal-5ba990249" target="_blank">LinkedIn</a>
+    <!-- ======================================================================
+         06. COMPETITIONS, RESEARCH GRANTS & ACADEMIC TIMELINE
+         ====================================================================== -->
+    <section id="timeline" class="section container">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="timeline_kicker">KİLOMETRE TAŞLARI &amp; ARAŞTIRMALAR</span>
+        <h2 class="section-title" data-i18n="timeline_title">Yarışmalar, Projeler ve Akademik Yolculuk</h2>
+        <p class="section-sub" data-i18n="timeline_sub">
+          TÜBİTAK, Teknofest, BAP-100 araştırma fonları ve patent başvurusuyla desteklenen mühendislik yolculuğum.
+        </p>
+      </div>
+
+      <div id="timeline-list" class="timeline"></div>
+    </section>
+
+    <!-- ======================================================================
+         07. CONTACT COMMAND CENTER (PDF PAGE 20)
+         ====================================================================== -->
+    <section id="contact" class="section container">
+      <div class="contact-box">
+        <span class="section-kicker" data-i18n="contact_kicker">İLETİŞİM · İŞ BİRLİĞİ</span>
+        <h2 data-i18n="contact_title">Birlikte Çalışalım</h2>
+        <p data-i18n="contact_desc">
+          Otonom sistemler, robotik, bilgisayarlı görü ve savunma teknolojileri alanındaki Ar-Ge ve mühendislik fırsatlarına açığım.
+        </p>
+
+        <div class="contact-cards-grid">
+          <!-- Click-to-Copy Email Card -->
+          <button
+            type="button"
+            id="copy-email-btn"
+            class="contact-card-item"
+            style="cursor: pointer; text-align: left;"
+            aria-label="Copy email address muhammedenesbal1@gmail.com"
+          >
+            <span class="contact-card-label" data-i18n="contact_email_label">E-Posta (Tıkla &amp; Kopyala)</span>
+            <span class="contact-card-value">muhammedenesbal1@gmail.com</span>
+          </button>
+
+          <!-- Direct Phone Card -->
+          <a href="tel:+905443471929" class="contact-card-item">
+            <span class="contact-card-label" data-i18n="contact_phone_label">Telefon</span>
+            <span class="contact-card-value">+90 544 347 19 29</span>
+          </a>
+
+          <!-- GitHub Profile Card -->
+          <a href="https://github.com/quantum-Blue" target="_blank" rel="noopener" class="contact-card-item">
+            <span class="contact-card-label" data-i18n="contact_github_label">GitHub Profili</span>
+            <span class="contact-card-value">github.com/quantum-Blue ↗</span>
+          </a>
+
+          <!-- LinkedIn Profile Card -->
+          <a href="https://linkedin.com/in/muhammed-enes-bal" target="_blank" rel="noopener" class="contact-card-item">
+            <span class="contact-card-label" data-i18n="contact_linkedin_label">LinkedIn Profili</span>
+            <span class="contact-card-value">linkedin.com/in/muhammed-enes-bal ↗</span>
+          </a>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:muhammedenesbal1@gmail.com" class="btn btn-primary">✉️ muhammedenesbal1@gmail.com</a>
+          <a
+            href="assets/pdf/Muhammed_Enes_BAL_Portfolio_TR.pdf"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-gold"
+            data-i18n="btn_pdf_tr"
+          >
+            📄 Portfolyo (TR - PDF)
+          </a>
+          <a
+            href="assets/pdf/Muhammed_Enes_BAL_Portfolio_EN.pdf"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+            data-i18n="btn_pdf_en"
+          >
+            📄 Portfolio (EN - PDF)
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer container">
-    <p>© 2026 Muhammed Enes BAL</p>
+    <p>© 2026 Muhammed Enes BAL · Robotics, Autonomous Systems &amp; Embedded AI Portfolio</p>
   </footer>
 
-  <!-- Proje Detay Modalı -->
+  <!-- Clipboard Toast Notification -->
+  <div id="copy-toast" class="copy-toast" role="status" aria-live="polite"></div>
+
+  <!-- ========================================================================
+       08. ENGINEERING CASE STUDY MODAL DIALOG
+       ======================================================================== -->
   <div id="project-modal" class="modal hidden" aria-hidden="true">
     <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-content" role="dialog" aria-modal="true">
-      <button id="modal-close" class="modal-close" aria-label="Close">×</button>
-      <span id="modal-category" class="badge"></span>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button id="modal-close" class="modal-close" type="button" aria-label="Close modal">×</button>
+
+      <div class="modal-topbar">
+        <span id="modal-category" class="badge"></span>
+        <span id="modal-code" class="metric-chip"></span>
+      </div>
+
       <h3 id="modal-title"></h3>
       <p id="modal-summary" class="modal-summary"></p>
+
+      <!-- Quantitative Metric Chips inside Modal -->
+      <div id="modal-metrics" class="card-metrics" style="margin-bottom: 20px;"></div>
+
+      <!-- Interactive Multi-Image Gallery with Caption & Thumbnails -->
+      <div id="modal-gallery-wrap" class="modal-gallery">
+        <div class="gallery-main-view">
+          <img id="modal-gallery-img" src="" alt="" />
+        </div>
+        <p id="modal-gallery-caption" class="gallery-caption"></p>
+        <div id="modal-gallery-thumbs" class="gallery-thumbs"></div>
+      </div>
+
+      <!-- 3-Stage System Architecture Flow Diagram -->
+      <div id="modal-arch-section" class="modal-block">
+        <h4 data-i18n="modal_arch_title">Sistem Mimarisi &amp; Operasyon Akışı</h4>
+        <div id="modal-arch-grid" class="arch-flow-grid"></div>
+      </div>
+
+      <!-- Gold Callout Box: My Contribution -->
+      <div id="modal-contrib-box" class="contribution-callout">
+        <h4 data-i18n="modal_contrib_title">Benim Katkım</h4>
+        <p id="modal-contrib-text"></p>
+      </div>
+
+      <!-- Technical Implementation Details List -->
       <div class="modal-block">
-        <h4 data-i18n="modal_contrib">Katkım & Teknik Detaylar</h4>
+        <h4 data-i18n="modal_details_title">Teknik Detaylar &amp; Mühendislik Uygulaması</h4>
         <ul id="modal-details"></ul>
       </div>
+
+      <!-- Optional Technical Specs / Benchmark Table (MonTech & House M.D. NLP) -->
+      <div id="modal-table-section" class="modal-block" style="display: none;">
+        <h4 data-i18n="modal_table_title">Teknik Bileşenler &amp; Karşılaştırma Tablosu</h4>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead id="modal-table-head"></thead>
+            <tbody id="modal-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Engineering Challenges & Solutions Callout -->
+      <div id="modal-challenges-box" class="challenges-box">
+        <h4 data-i18n="modal_challenges_title">Karşılaşılan Mühendislik Sorunları &amp; Çözümler</h4>
+        <ul id="modal-challenges-list"></ul>
+      </div>
+
+      <!-- Full Technology Stack Tags -->
       <div id="modal-tags" class="tags"></div>
+
+      <!-- Modal Footer: PDF Deep-Link (#page=X) & Previous / Next Case Study Navigation -->
+      <div class="modal-footer-nav">
+        <a
+          id="modal-pdf-deeplink"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-gold"
+          data-i18n="modal_pdf_btn"
+        >
+          📄 PDF Portfolyoda Bu Projeyi Aç
+        </a>
+        <div class="modal-nav-btns">
+          <button id="modal-prev-btn" type="button" class="btn btn-secondary" data-i18n="modal_prev_btn">
+            ← Önceki Proje
+          </button>
+          <button id="modal-next-btn" type="button" class="btn btn-secondary" data-i18n="modal_next_btn">
+            Sonraki Proje →
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Application Data Layer & Main Controller -->
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
