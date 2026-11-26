@@ -17,7 +17,7 @@
     content="Muhammed Enes BAL, Robotics Engineer, Autonomous Systems, ROS 2, SLAM, Fast-LIO2, RTAB-Map, PX4, Pixhawk 6X, UAV, AUV, Computer Vision, YOLOv12, RT-DETR, Embedded AI, Teknofest, TUBITAK"
   />
   <meta name="author" content="Muhammed Enes BAL" />
-  <meta name="theme-color" content="#070b14" />
+  <meta name="theme-color" content="#0e1626" />
 
   <!-- OpenGraph / LinkedIn / Social Media Preview Card -->
   <meta property="og:type" content="website" />
@@ -29,18 +29,18 @@
   <meta property="og:image" content="assets/img/profile/hero_portrait_bw.jpeg" />
   <meta property="og:url" content="https://quantum-blue.github.io/" />
 
-  <!-- Custom Modular SVG Favicon (Tactical Autonomy Emblem) -->
+  <!-- Custom Modular SVG Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
-  <!-- Google Fonts: Inter (UI Sans) & JetBrains Mono (Telemetry Monospace) -->
+  <!-- Google Fonts: Inter (Editorial UI Sans) & JetBrains Mono (Technical Specs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700;800&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap"
     rel="stylesheet"
   />
 
-  <!-- Core Tactical Autonomy Stylesheet -->
+  <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Structured Data (JSON-LD) for Search Engines & Recruiters -->
@@ -80,17 +80,20 @@
   </script>
 </head>
 <body>
-  <!-- Top Telemetry Scroll Progress Bar -->
+  <!-- Top Scroll Progress Bar -->
   <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
 
   <!-- ========================================================================
-       STICKY GLASSMORPHIC NAVIGATION BAR
+       STICKY NAVIGATION BAR (CLEAN SENIOR BRANDING WITH FULL NAME)
        ======================================================================== -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo" aria-label="Muhammed Enes BAL Home">
-        MEB<span>.autonomy</span>
-        <span class="logo-tag">ROS 2 · AI</span>
+      <a href="#top" class="brand" aria-label="Muhammed Enes BAL Home">
+        <span class="brand-monogram" aria-hidden="true">MEB</span>
+        <span class="brand-text">
+          <span class="brand-name">Muhammed Enes BAL</span>
+          <span class="brand-role" data-i18n="nav_role_tag">Robotik &amp; Otonom Sistemler</span>
+        </span>
       </a>
 
       <button
@@ -107,7 +110,7 @@
         <a href="#architecture" data-i18n="nav_architecture">Sistem Mimarisi</a>
         <a href="#projects" data-i18n="nav_projects">Projeler</a>
         <a href="#skills" data-i18n="nav_skills">Yetkinlikler</a>
-        <a href="#timeline" data-i18n="nav_timeline">Deneyim &amp; Başarılar</a>
+        <a href="#timeline" data-i18n="nav_timeline">Deneyim</a>
         <a href="#contact" data-i18n="nav_contact">İletişim</a>
         <button id="lang-toggle" class="lang-btn" type="button" aria-label="Switch Language">EN</button>
       </nav>
@@ -116,7 +119,7 @@
 
   <main>
     <!-- ======================================================================
-         01. HERO SECTION & KPI TELEMETRY STATISTICS (PDF PAGE 1 & 2)
+         01. HERO SECTION & KPI STATISTICS (PDF PAGE 1 & 2)
          ====================================================================== -->
     <section class="hero container" id="top">
       <div class="hero-grid">
@@ -126,42 +129,55 @@
             <span data-i18n="hero_status">Otonom Sistemler, Robotik ve Savunma Teknolojileri Fırsatlarına Açık</span>
           </div>
 
-          <span class="eyebrow" data-i18n="hero_role">Robotik ve Otonom Sistemler Mühendisi</span>
+          <span class="eyebrow" data-i18n="hero_role">TEKNİK PORTFOLYO</span>
           <h1>Muhammed Enes BAL</h1>
           <p class="hero-subtitle-domains" data-i18n="hero_domains">
             Robotik · Otonom Sistemler · Yapay Zekâ · Gömülü Sistemler
           </p>
+          <div class="hero-accent-line" aria-hidden="true"></div>
           <p class="hero-desc" data-i18n="hero_desc">
-            İnsansız hava (İHA), kara (UGV) ve sualtı (AUV) araçları için SLAM, sensör füzyonu, bilgisayarlı görü ve gömülü yapay zekâ sistemlerini simülasyondan fiziksel donanıma uçtan uca taşıyorum.
+            Otonom hava, kara ve sualtı araçları için SLAM, sensör füzyonu, bilgisayarlı görü ve derin öğrenme sistemlerini simülasyondan fiziksel donanıma uçtan uca geliştiriyorum.
           </p>
 
-          <!-- Operational Triad Badges (Air · Sea · Ground) -->
+          <!-- Operational Triad Badges (Air · Sea · Ground) with Clean Vector Icons -->
           <div class="triad-pills">
-            <span class="triad-pill">✈️ <span data-i18n="triad_air">Hava (İHA): 4B LiDAR + Stereo SLAM</span></span>
-            <span class="triad-pill">🌊 <span data-i18n="triad_sea">Sualtı (AUV): 6-İticili Biyomimetik GNC</span></span>
-            <span class="triad-pill">🚚 <span data-i18n="triad_ground">Kara (UGV): Seviye 4 Otonom Sürüş</span></span>
+            <span class="triad-pill">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+              <span data-i18n="triad_air">Hava (İHA): 4B LiDAR + Stereo SLAM</span>
+            </span>
+            <span class="triad-pill">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12h20"/><path d="M5 16c1.5-1.5 3.5-1.5 5 0s3.5 1.5 5 0 3.5-1.5 5 0"/></svg>
+              <span data-i18n="triad_sea">Sualtı (AUV): 6-İticili Biyomimetik GNC</span>
+            </span>
+            <span class="triad-pill">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="8" width="18" height="8" rx="2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+              <span data-i18n="triad_ground">Kara (UGV): Seviye 4 Otonom Sürüş</span>
+            </span>
           </div>
 
-          <!-- Primary Call-to-Action Buttons -->
+          <!-- Primary Call-to-Action Buttons (Zero Emoji, Crisp Vector Icons) -->
           <div class="cta-group">
-            <a href="#projects" class="btn btn-primary" data-i18n="btn_explore_projects">🚀 Projeleri İncele</a>
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="btn_explore_projects">Projeleri İncele</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
             <a
               href="assets/pdf/Muhammed_Enes_BAL_Portfolio_TR.pdf"
               target="_blank"
               rel="noopener"
-              class="btn btn-gold"
-              data-i18n="btn_pdf_tr"
+              class="btn btn-secondary"
             >
-              📄 Portfolyo (TR - PDF)
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span data-i18n="btn_pdf_tr">Portfolyo (TR — PDF)</span>
             </a>
             <a
               href="assets/pdf/Muhammed_Enes_BAL_Portfolio_EN.pdf"
               target="_blank"
               rel="noopener"
               class="btn btn-secondary"
-              data-i18n="btn_pdf_en"
             >
-              📄 Portfolio (EN - PDF)
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span data-i18n="btn_pdf_en">Portfolio (EN — PDF)</span>
             </a>
             <a
               href="https://github.com/quantum-Blue"
@@ -169,12 +185,13 @@
               rel="noopener"
               class="btn btn-ghost"
             >
-              GitHub ↗
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
             </a>
           </div>
         </div>
 
-        <!-- Hero Portrait Frame (Extracted from PDF Page 1 Cover) -->
+        <!-- Hero Portrait Frame (Matches PDF Page 1 Gold Ring Portrait) -->
         <div class="hero-visual">
           <div class="portrait-frame">
             <img
@@ -183,7 +200,7 @@
               width="280"
               height="280"
             />
-            <span class="portrait-telemetry-badge" data-i18n="portrait_badge">SIM-TO-REAL // ROS 2 &amp; PX4</span>
+            <span class="portrait-telemetry-badge" data-i18n="portrait_badge">ROS 2 · PX4 · Edge AI</span>
           </div>
         </div>
       </div>
@@ -197,8 +214,8 @@
          ====================================================================== -->
     <section id="about" class="section container">
       <div class="section-header">
-        <span class="section-kicker" data-i18n="about_kicker">HAKKIMDA · MÜHENDİSLİK PROFİLİ</span>
-        <h2 class="section-title" data-i18n="about_title">Simülasyondan Fiziksel Donanıma Uçtan Uca Otonomi</h2>
+        <span class="section-kicker" data-i18n="about_kicker">HAKKIMDA</span>
+        <h2 class="section-title" data-i18n="about_title">Robotik ve Otonom Sistemler Mühendisi</h2>
       </div>
 
       <div class="about-card">
@@ -212,21 +229,21 @@
           />
         </div>
         <div class="about-body">
-          <h3 data-i18n="about_heading">Bilgisayar Mühendisi | Robotik, Otonom Sistemler ve Gömülü Yapay Zekâ</h3>
+          <h3 data-i18n="about_heading">Simülasyondan Fiziksel Donanıma Uçtan Uca Sistem Mühendisliği</h3>
           <p data-i18n="about_p1">
-            Robotik, otonom sistemler ve yapay zekâ alanlarına odaklanan bir bilgisayar mühendisiyim. Teknofest yarışmaları, TÜBİTAK 2209-A yürütücülüğü ve BAP-100 araştırma projelerindeki deneyimimle; insansız hava, kara ve sualtı araçları, SLAM, sensör füzyonu ve bilgisayarlı görü üzerine uçtan uca sistemler geliştiriyorum.
+            Robotik, otonom sistemler ve yapay zekâ alanlarına odaklanan yeni mezun bir bilgisayar mühendisiyim. Teknofest yarışmaları ve TÜBİTAK projelerindeki deneyimimle; insansız hava ve sualtı araçları, SLAM, sensör füzyonu ve bilgisayarlı görü üzerine uçtan uca sistemler geliştiriyorum.
           </p>
           <p data-i18n="about_p2">
-            Algoritmalarımı yalnızca simülasyon (Gazebo / PX4 / ROS 2) ortamında bırakmıyor; Pixhawk 6X, Raspberry Pi 5 + AI HAT, 4B LiDAR, özel stereo kamera düzenekleri ve sualtı itki sistemleri üzerinde fiziksel donanıma taşıyarak derin öğrenme ile gömülü sistemleri gerçek zamanlı birleştiriyorum.
+            Projelerimi simülasyondan (Gazebo / PX4 / ROS 2) fiziksel donanıma (Pixhawk 6X, Raspberry Pi 5 + AI HAT, 4B LiDAR, stereo kamera ve sualtı itki sistemleri) taşıyabiliyor, derin öğrenme ile gömülü sistemleri bir arada kullanabiliyorum.
           </p>
           <div class="about-pillars">
             <span class="pillar-chip">Autonomous Navigation</span>
-            <span class="pillar-chip">Hybrid 3D/2D SLAM</span>
-            <span class="pillar-chip">Multi-Modal Sensor Fusion</span>
-            <span class="pillar-chip">Real-Time Computer Vision</span>
-            <span class="pillar-chip">ROS / ROS 2 &amp; PX4</span>
-            <span class="pillar-chip">Edge AI &amp; Embedded Systems</span>
-            <span class="pillar-chip">Turkish NLP (BERT)</span>
+            <span class="pillar-chip">SLAM</span>
+            <span class="pillar-chip">Computer Vision</span>
+            <span class="pillar-chip">Deep Learning</span>
+            <span class="pillar-chip">ROS 2</span>
+            <span class="pillar-chip">Embedded Systems</span>
+            <span class="pillar-chip">Sensor Fusion</span>
           </div>
         </div>
       </div>
@@ -237,10 +254,10 @@
          ====================================================================== -->
     <section id="architecture" class="section container">
       <div class="section-header">
-        <span class="section-kicker" data-i18n="explorer_kicker">SİM-TO-REAL MİMARİ LABORATUVARI</span>
-        <h2 class="section-title" data-i18n="explorer_title">Operasyon Alanlarına Göre Otonomi Boru Hattı</h2>
+        <span class="section-kicker" data-i18n="explorer_kicker">MÜHENDİSLİK MİMARİSİ</span>
+        <h2 class="section-title" data-i18n="explorer_title">Operasyon Alanlarına Göre Otonomi Mimarisi</h2>
         <p class="section-sub" data-i18n="explorer_sub">
-          Hava, Sualtı ve Kara platformlarında kurduğum Sensör ➔ Füzyon/SLAM ➔ Planlama/Kontrol ➔ Çıktı mimarisini incelemek için bir platform seçin.
+          Hava, Sualtı ve Kara platformlarında kurduğum Sensör, Füzyon/SLAM, Planlama/Kontrol ve Görev Çıktısı katmanlarını incelemek için bir platform seçin.
         </p>
       </div>
 
@@ -261,10 +278,10 @@
          ====================================================================== -->
     <section id="projects" class="section container">
       <div class="section-header">
-        <span class="section-kicker" data-i18n="projects_kicker">SEÇİLİ TEKNİK PROJELER</span>
-        <h2 class="section-title" data-i18n="projects_title">Mühendislik Vaka Analizleri (Case Studies)</h2>
+        <span class="section-kicker" data-i18n="projects_kicker">SEÇİLİ PROJELER</span>
+        <h2 class="section-title" data-i18n="projects_title">Teknik Projeler ve Vaka Analizleri</h2>
         <p class="section-sub" data-i18n="projects_sub">
-          Sistem mimarisi şemalarını, kantitatif metrikleri, katkılarımı ve proje görsellerini incelemek için herhangi bir proje kartına tıklayın.
+          Sistem mimarisi şemalarını, kantitatif metrikleri, projedeki katkılarımı ve teknik çıktıları incelemek için bir projeye tıklayın.
         </p>
       </div>
 
@@ -280,10 +297,10 @@
          ====================================================================== -->
     <section id="skills" class="section container">
       <div class="section-header">
-        <span class="section-kicker" data-i18n="skills_kicker">YETENEKLER · TEKNİK MATRİS</span>
+        <span class="section-kicker" data-i18n="skills_kicker">YETENEKLER</span>
         <h2 class="section-title" data-i18n="skills_title">Teknik Yetkinlikler</h2>
         <p class="section-sub" data-i18n="skills_sub">
-          Otonom navigasyon, SLAM, bilgisayarlı görü, gömülü donanım ve derin öğrenme dikeylerinde kullandığım mühendislik araçları.
+          Otonom navigasyon, SLAM, bilgisayarlı görü, gömülü donanım ve yazılım geliştirme alanlarında kullandığım teknolojiler.
         </p>
       </div>
 
@@ -295,10 +312,10 @@
          ====================================================================== -->
     <section id="timeline" class="section container">
       <div class="section-header">
-        <span class="section-kicker" data-i18n="timeline_kicker">KİLOMETRE TAŞLARI &amp; ARAŞTIRMALAR</span>
+        <span class="section-kicker" data-i18n="timeline_kicker">DENEYİM VE ARAŞTIRMA</span>
         <h2 class="section-title" data-i18n="timeline_title">Yarışmalar, Projeler ve Akademik Yolculuk</h2>
         <p class="section-sub" data-i18n="timeline_sub">
-          TÜBİTAK, Teknofest, BAP-100 araştırma fonları ve patent başvurusuyla desteklenen mühendislik yolculuğum.
+          TÜBİTAK 2209-A, Teknofest, BAP-100 araştırma projeleri ve patent başvurusuyla desteklenen mühendislik çalışmalarım.
         </p>
       </div>
 
@@ -306,67 +323,89 @@
     </section>
 
     <!-- ======================================================================
-         07. CONTACT COMMAND CENTER (PDF PAGE 20)
+         07. CONTACT SECTION (MATCHING PDF PAGE 20 WITH CLICKABLE SVG BADGES)
          ====================================================================== -->
     <section id="contact" class="section container">
       <div class="contact-box">
-        <span class="section-kicker" data-i18n="contact_kicker">İLETİŞİM · İŞ BİRLİĞİ</span>
-        <h2 data-i18n="contact_title">Birlikte Çalışalım</h2>
+        <span class="section-kicker" data-i18n="contact_kicker">İLETİŞİM</span>
+        <h2 data-i18n="contact_title">Birlikte çalışalım</h2>
         <p data-i18n="contact_desc">
-          Otonom sistemler, robotik, bilgisayarlı görü ve savunma teknolojileri alanındaki Ar-Ge ve mühendislik fırsatlarına açığım.
+          Otonom sistemler, robotik ve savunma teknolojileri alanındaki fırsatlara açığım.
         </p>
 
         <div class="contact-cards-grid">
-          <!-- Click-to-Copy Email Card -->
+          <!-- Click-to-Copy Email Card with Vector Icon -->
           <button
             type="button"
             id="copy-email-btn"
             class="contact-card-item"
-            style="cursor: pointer; text-align: left;"
             aria-label="Copy email address muhammedenesbal1@gmail.com"
           >
-            <span class="contact-card-label" data-i18n="contact_email_label">E-Posta (Tıkla &amp; Kopyala)</span>
-            <span class="contact-card-value">muhammedenesbal1@gmail.com</span>
+            <span class="contact-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span class="contact-card-meta">
+              <span class="contact-card-label" data-i18n="contact_email_label">E-Posta (Kopyalamak için tıklayın)</span>
+              <span class="contact-card-value">muhammedenesbal1@gmail.com</span>
+            </span>
           </button>
 
-          <!-- Direct Phone Card -->
+          <!-- Direct Phone Card with Vector Icon -->
           <a href="tel:+905443471929" class="contact-card-item">
-            <span class="contact-card-label" data-i18n="contact_phone_label">Telefon</span>
-            <span class="contact-card-value">+90 544 347 19 29</span>
+            <span class="contact-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="contact-card-meta">
+              <span class="contact-card-label" data-i18n="contact_phone_label">Telefon</span>
+              <span class="contact-card-value">+90 544 347 19 29</span>
+            </span>
           </a>
 
-          <!-- GitHub Profile Card -->
+          <!-- GitHub Profile Card with Official Octocat Vector Logo -->
           <a href="https://github.com/quantum-Blue" target="_blank" rel="noopener" class="contact-card-item">
-            <span class="contact-card-label" data-i18n="contact_github_label">GitHub Profili</span>
-            <span class="contact-card-value">github.com/quantum-Blue ↗</span>
+            <span class="contact-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </span>
+            <span class="contact-card-meta">
+              <span class="contact-card-label" data-i18n="contact_github_label">GitHub</span>
+              <span class="contact-card-value">github.com/quantum-Blue</span>
+            </span>
           </a>
 
-          <!-- LinkedIn Profile Card -->
+          <!-- LinkedIn Profile Card with Official LinkedIn Vector Logo -->
           <a href="https://linkedin.com/in/muhammed-enes-bal" target="_blank" rel="noopener" class="contact-card-item">
-            <span class="contact-card-label" data-i18n="contact_linkedin_label">LinkedIn Profili</span>
-            <span class="contact-card-value">linkedin.com/in/muhammed-enes-bal ↗</span>
+            <span class="contact-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </span>
+            <span class="contact-card-meta">
+              <span class="contact-card-label" data-i18n="contact_linkedin_label">LinkedIn</span>
+              <span class="contact-card-value">linkedin.com/in/muhammed-enes-bal</span>
+            </span>
           </a>
         </div>
 
         <div class="contact-links">
-          <a href="mailto:muhammedenesbal1@gmail.com" class="btn btn-primary">✉️ muhammedenesbal1@gmail.com</a>
+          <a href="mailto:muhammedenesbal1@gmail.com" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span data-i18n="btn_send_email">E-Posta Gönder</span>
+          </a>
           <a
             href="assets/pdf/Muhammed_Enes_BAL_Portfolio_TR.pdf"
             target="_blank"
             rel="noopener"
-            class="btn btn-gold"
-            data-i18n="btn_pdf_tr"
+            class="btn btn-secondary"
           >
-            📄 Portfolyo (TR - PDF)
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="btn_pdf_tr">Portfolyo (TR — PDF)</span>
           </a>
           <a
             href="assets/pdf/Muhammed_Enes_BAL_Portfolio_EN.pdf"
             target="_blank"
             rel="noopener"
             class="btn btn-secondary"
-            data-i18n="btn_pdf_en"
           >
-            📄 Portfolio (EN - PDF)
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="btn_pdf_en">Portfolio (EN — PDF)</span>
           </a>
         </div>
       </div>
@@ -375,7 +414,7 @@
 
   <!-- Footer -->
   <footer class="footer container">
-    <p>© 2026 Muhammed Enes BAL · Robotics, Autonomous Systems &amp; Embedded AI Portfolio</p>
+    <p>© 2026 Muhammed Enes BAL · Robotics &amp; Autonomous Systems Engineer</p>
   </footer>
 
   <!-- Clipboard Toast Notification -->
@@ -411,7 +450,7 @@
 
       <!-- 3-Stage System Architecture Flow Diagram -->
       <div id="modal-arch-section" class="modal-block">
-        <h4 data-i18n="modal_arch_title">Sistem Mimarisi &amp; Operasyon Akışı</h4>
+        <h4 data-i18n="modal_arch_title">Sistem Mimarisi ve Operasyon Akışı</h4>
         <div id="modal-arch-grid" class="arch-flow-grid"></div>
       </div>
 
@@ -423,13 +462,13 @@
 
       <!-- Technical Implementation Details List -->
       <div class="modal-block">
-        <h4 data-i18n="modal_details_title">Teknik Detaylar &amp; Mühendislik Uygulaması</h4>
+        <h4 data-i18n="modal_details_title">Teknik Detaylar ve Uygulama</h4>
         <ul id="modal-details"></ul>
       </div>
 
       <!-- Optional Technical Specs / Benchmark Table (MonTech & House M.D. NLP) -->
       <div id="modal-table-section" class="modal-block" style="display: none;">
-        <h4 data-i18n="modal_table_title">Teknik Bileşenler &amp; Karşılaştırma Tablosu</h4>
+        <h4 data-i18n="modal_table_title">Sistem Elemanları ve Karşılaştırma Tablosu</h4>
         <div class="spec-table-wrap">
           <table class="spec-table">
             <thead id="modal-table-head"></thead>
@@ -440,7 +479,7 @@
 
       <!-- Engineering Challenges & Solutions Callout -->
       <div id="modal-challenges-box" class="challenges-box">
-        <h4 data-i18n="modal_challenges_title">Karşılaşılan Mühendislik Sorunları &amp; Çözümler</h4>
+        <h4 data-i18n="modal_challenges_title">Karşılaşılan Sorunlar ve Çözümler</h4>
         <ul id="modal-challenges-list"></ul>
       </div>
 
@@ -454,17 +493,17 @@
           href="#"
           target="_blank"
           rel="noopener"
-          class="btn btn-gold"
+          class="btn btn-primary"
           data-i18n="modal_pdf_btn"
         >
-          📄 PDF Portfolyoda Bu Projeyi Aç
+          PDF Portfolyoda Görüntüle
         </a>
         <div class="modal-nav-btns">
           <button id="modal-prev-btn" type="button" class="btn btn-secondary" data-i18n="modal_prev_btn">
-            ← Önceki Proje
+            ← Önceki
           </button>
           <button id="modal-next-btn" type="button" class="btn btn-secondary" data-i18n="modal_next_btn">
-            Sonraki Proje →
+            Sonraki →
           </button>
         </div>
       </div>

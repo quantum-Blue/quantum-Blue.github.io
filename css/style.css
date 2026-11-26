@@ -1,27 +1,27 @@
 /**
  * ============================================================================
- * @fileoverview "Tactical Autonomy & Robotics Lab" Design System & Stylesheet
+ * @fileoverview Refined Senior Editorial & Engineering Design System
  * @author       Muhammed Enes BAL | Robotics & Autonomous Systems Engineer
- * @version      2.0.0 (Phase 2 - Custom Engineering UI/UX Architecture)
- * @description  A bespoke, modular CSS architecture engineered for an Autonomous
- *               Systems (UAV / AUV / UGV), SLAM, Computer Vision, and Embedded AI
- *               portfolio. Harmonizes the dark navy & gold/amber visual identity
- *               of the technical PDF portfolios with Ground Control Station (GCS)
- *               telemetry cyan accents, coordinate grids, and glassmorphic surfaces.
+ * @version      7.0.0 (Phase 7 - Human-Crafted Senior Aesthetic & Contrast Fix)
+ * @description  Harmonizes directly with the 20-page Technical Portfolio PDFs:
+ *               Deep Slate Navy (#0e1626 / #131c2e) surfaces, Warm Bronze-Gold
+ *               (#d4942a) primary editorial accents, crisp white/silver
+ *               typography, and vector SVG iconography. Removes neon AI-template
+ *               gimmicks and fixes button/link specificity contrast bugs.
  *
  * ARCHITECTURE & TABLE OF CONTENTS:
  *   01. Design Tokens & Custom Properties (:root)
- *   02. CSS Reset, Base Typography & Telemetry Grid Background
+ *   02. CSS Reset & Editorial Base Typography
  *   03. Layout Primitives, Containers & Section Headers
- *   04. Sticky Glassmorphic Navigation, Scroll Progress & Mobile Menu
+ *   04. Sticky Navigation & Senior Full-Name Brand Identity
  *   05. Hero Section, Status Indicator, Portrait Frame & KPI Stat Cards
- *   06. About Me & Operational Triad (Air · Ground · Sea Badges)
- *   07. Interactive "Sim-to-Real" System Architecture Explorer
- *   08. Project Filter Bar & Engineering Showcase Cards (Grid, Cover, Metrics)
- *   09. Technical Competencies Matrix (6-Domain Skill Cards)
+ *   06. About Me & Engineering Identity Section
+ *   07. Interactive System Architecture Explorer
+ *   08. Project Filter Bar & Engineering Case Study Cards
+ *   09. Technical Competencies Matrix (6-Domain SVG Skill Cards)
  *   10. Engineering Milestones & Competition Timeline
- *   11. Contact Command Center & Quick-Copy Toast Notification
- *   12. Case Study Engineering Modal (Gallery, Flow Diagrams, Specs Table, Deep-Link)
+ *   11. Contact Section (PDF Page 20 Style with Vector Icon Badges)
+ *   12. Case Study Engineering Modal (Gallery, Flow Diagrams, Specs Table)
  *   13. Responsive Breakpoints (1024px, 768px, 480px) & Reduced Motion A11y
  * ============================================================================
  */
@@ -30,57 +30,60 @@
    01. DESIGN TOKENS & CUSTOM PROPERTIES (:root)
    ========================================================================== */
 :root {
-  /* Core Surfaces (Deep Space / Subsea Navy Palette matching PDF Portfolio) */
-  --bg: #070b14;
-  --bg-elevated: #0b1120;
-  --surface: #111827;
-  --surface-glass: rgba(17, 24, 39, 0.82);
-  --surface-hover: #1a2438;
-  --surface-card-inner: #0c1322;
+  /* Core Surfaces — Direct match to PDF Page 1 & Page 20 Deep Slate Navy */
+  --bg: #0e1626;
+  --bg-elevated: #111a2c;
+  --surface: #152036;
+  --surface-glass: rgba(21, 32, 54, 0.88);
+  --surface-hover: #1b2842;
+  --surface-card-inner: #101829;
 
-  /* Structural Borders & Telemetry Lines */
-  --border: #1e293b;
+  /* Structural Borders — Subtle, Crisp Hairlines */
+  --border: #23314d;
   --border-subtle: rgba(148, 163, 184, 0.14);
-  --border-accent: rgba(56, 189, 248, 0.35);
-  --border-gold: rgba(245, 158, 11, 0.4);
+  --border-accent: rgba(212, 148, 42, 0.45);
+  --border-gold: rgba(212, 148, 42, 0.45);
 
   /* Typography Colors */
   --text: #f8fafc;
-  --text-secondary: #cbd5e1;
+  --text-secondary: #d1d9e6;
   --muted: #94a3b8;
 
-  /* Brand & Telemetry Accents */
-  --accent: #38bdf8;          /* LiDAR / SLAM Telemetry Cyan */
-  --accent-dark: #0284c7;
-  --accent-glow: rgba(56, 189, 248, 0.16);
+  /* Primary Editorial Brand Accent — PDF Signature Warm Bronze / Gold */
+  --gold: #d4942a;
+  --gold-light: #e5a93c;
+  --gold-surface: rgba(212, 148, 42, 0.13);
 
-  --gold: #f59e0b;            /* PDF Portfolio Signature Amber / Gold */
-  --gold-light: #fbbf24;
-  --gold-surface: rgba(245, 158, 11, 0.11);
+  /* Secondary Technical Accent — Refined Steel Blue */
+  --accent: #d4942a;
+  --accent-dark: #b7791f;
+  --accent-glow: rgba(212, 148, 42, 0.15);
+  --steel: #93c5fd;
+  --steel-surface: rgba(147, 197, 253, 0.1);
 
-  --emerald: #10b981;         /* Hardware Verified / Active Status Green */
+  /* Status & Validation Accents */
+  --emerald: #10b981;
   --emerald-surface: rgba(16, 185, 129, 0.12);
-
-  --danger: #ef4444;          /* Challenge / Bottleneck Indicator */
+  --danger: #ef4444;
 
   /* Typography Font Stacks */
-  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, monospace;
 
   /* Geometry, Shadows & Transitions */
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
-  --shadow-card: 0 10px 30px -10px rgba(2, 6, 23, 0.7);
-  --shadow-glow: 0 0 25px -5px rgba(56, 189, 248, 0.22);
-  --shadow-modal: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
-  --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-card: 0 12px 32px -12px rgba(5, 10, 20, 0.65);
+  --shadow-glow: 0 6px 20px -4px rgba(212, 148, 42, 0.25);
+  --shadow-modal: 0 28px 64px -16px rgba(0, 0, 0, 0.85);
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 240ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
-   02. CSS RESET, BASE TYPOGRAPHY & TELEMETRY GRID BACKGROUND
+   02. CSS RESET & EDITORIAL BASE TYPOGRAPHY
    ========================================================================== */
 *,
 *::before,
@@ -99,13 +102,10 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg);
-  /* Subtle coordinate grid & ambient radial glow inspired by LiDAR / GCS HUDs */
+  /* Clean architectural circle highlight inspired by PDF Page 1 & Page 20 */
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.08), transparent 38%),
-    radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.06), transparent 35%),
-    linear-gradient(to right, rgba(30, 41, 59, 0.28) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 41, 59, 0.28) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(circle at 88% 12%, rgba(30, 50, 86, 0.55) 0%, transparent 45%),
+    radial-gradient(circle at 12% 88%, rgba(25, 42, 74, 0.45) 0%, transparent 45%);
   background-attachment: fixed;
   color: var(--text);
   line-height: 1.65;
@@ -128,7 +128,6 @@ button {
   font-family: inherit;
 }
 
-/* Custom Scrollbar for Engineering Look */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -137,19 +136,18 @@ button {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #23314d;
   border-radius: 4px;
-  border: 1px solid rgba(56, 189, 248, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #33476b;
 }
 
 /* ==========================================================================
    03. LAYOUT PRIMITIVES, CONTAINERS & SECTION HEADERS
    ========================================================================== */
 .container {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -167,28 +165,19 @@ button {
 }
 
 .section-kicker {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   color: var(--gold);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-}
-
-.section-kicker::before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 2px;
-  background: var(--gold);
+  gap: 10px;
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 3vw, 2.35rem);
-  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
   line-height: 1.2;
@@ -196,21 +185,21 @@ button {
 
 .section-sub {
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
   max-width: 720px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 /* ==========================================================================
-   04. STICKY GLASSMORPHIC NAVIGATION, SCROLL PROGRESS & MOBILE MENU
+   04. STICKY NAVIGATION & SENIOR FULL-NAME BRAND IDENTITY
    ========================================================================== */
 .scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: 2px;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent), var(--gold));
+  background: var(--gold);
   z-index: 100;
   transition: width 80ms linear;
 }
@@ -219,9 +208,9 @@ button {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(7, 11, 20, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(14, 22, 38, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -229,45 +218,71 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 72px;
   gap: 16px;
 }
 
+/* Clean Senior Brand Identity (Monogram + Full Name + Subtle Role Subtitle) */
+.brand,
 .logo {
-  font-family: var(--font-mono);
-  font-weight: 800;
-  font-size: 1.15rem;
-  color: var(--text);
-  letter-spacing: -0.02em;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
 }
 
-.logo span {
-  color: var(--accent);
+.brand-monogram {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.logo-tag {
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: var(--gold-surface);
-  color: var(--gold);
-  border: 1px solid var(--border-gold);
-  margin-left: 4px;
+.brand:hover .brand-monogram {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.brand-role {
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 24px;
 }
 
 .nav-actions a {
-  color: var(--muted);
-  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color var(--transition-fast);
   position: relative;
@@ -276,7 +291,7 @@ button {
 
 .nav-actions a:hover,
 .nav-actions a.active {
-  color: var(--text);
+  color: var(--gold-light);
 }
 
 .nav-actions a::after {
@@ -286,7 +301,7 @@ button {
   bottom: -2px;
   width: 0%;
   height: 2px;
-  background: var(--accent);
+  background: var(--gold);
   transition: width var(--transition-fast);
 }
 
@@ -298,21 +313,20 @@ button {
 .lang-btn {
   font-family: var(--font-mono);
   background: var(--surface);
-  color: var(--accent);
-  border: 1px solid var(--border-accent);
-  padding: 6px 13px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   transition: all var(--transition-fast);
 }
 
 .lang-btn:hover {
-  background: var(--accent);
-  color: var(--bg);
-  box-shadow: var(--shadow-glow);
+  border-color: var(--gold);
+  color: var(--gold-light);
 }
 
 .mobile-menu-btn {
@@ -331,13 +345,13 @@ button {
    05. HERO SECTION, STATUS INDICATOR, PORTRAIT FRAME & KPI STAT CARDS
    ========================================================================== */
 .hero {
-  padding: 72px 24px 56px;
+  padding: 68px 24px 52px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
-  gap: 44px;
+  gap: 48px;
   align-items: center;
 }
 
@@ -345,70 +359,64 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 5px 13px;
   border-radius: 999px;
-  background: var(--emerald-surface);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  color: #34d399;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 16px;
+  background: rgba(21, 32, 54, 0.9);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .status-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--emerald);
-  box-shadow: 0 0 10px var(--emerald);
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.25); }
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
   color: var(--gold);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   display: block;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.7rem);
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  margin: 10px 0 16px;
+  letter-spacing: -0.025em;
+  margin: 10px 0 12px;
   line-height: 1.1;
-  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
 }
 
 .hero-subtitle-domains {
-  font-family: var(--font-mono);
-  font-size: 0.92rem;
-  color: var(--accent);
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+/* Signature Gold Horizontal Divider matching PDF Page 1 */
+.hero-accent-line {
+  width: 76px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-bottom: 18px;
 }
 
 .hero-desc {
-  max-width: 680px;
-  color: var(--text-secondary);
-  font-size: 1.06rem;
-  margin-bottom: 28px;
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  margin-bottom: 24px;
 }
 
-/* Operational Triad Pills (Air · Ground · Sea) */
 .triad-pills {
   display: flex;
   flex-wrap: wrap;
@@ -420,21 +428,21 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 13px;
+  padding: 6px 12px;
   border-radius: var(--radius-sm);
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--surface-card-inner);
   border: 1px solid var(--border);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--text-secondary);
 }
 
-.triad-pill strong {
-  color: var(--accent);
-  font-family: var(--font-mono);
+.triad-pill svg {
+  color: var(--gold);
+  flex-shrink: 0;
 }
 
-/* Buttons & Call To Actions */
+/* Buttons & Call To Actions — High Contrast Guaranteed */
 .cta-group {
   display: flex;
   flex-wrap: wrap;
@@ -450,60 +458,76 @@ button {
   border-radius: var(--radius-md);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.93rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: var(--bg);
-  border: 1px solid var(--accent);
+.btn-primary,
+.contact-links a.btn-primary {
+  background: var(--gold);
+  color: #0b111e;
+  border: 1px solid var(--gold);
+  font-weight: 700;
 }
 
-.btn-primary:hover {
-  background: #7dd3fc;
+.btn-primary:hover,
+.contact-links a.btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: #0b111e;
   box-shadow: var(--shadow-glow);
+  text-decoration: none;
 }
 
-.btn-gold {
+.btn-gold,
+.contact-links a.btn-gold {
   background: var(--gold-surface);
   color: var(--gold-light);
   border: 1px solid var(--border-gold);
 }
 
-.btn-gold:hover {
+.btn-gold:hover,
+.contact-links a.btn-gold:hover {
   background: var(--gold);
-  color: var(--bg);
+  color: #0b111e;
+  text-decoration: none;
 }
 
-.btn-secondary {
+.btn-secondary,
+.contact-links a.btn-secondary {
   background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
 }
 
-.btn-secondary:hover {
-  border-color: var(--accent);
+.btn-secondary:hover,
+.contact-links a.btn-secondary:hover {
+  border-color: var(--gold);
   background: var(--surface-hover);
+  color: var(--text);
+  text-decoration: none;
 }
 
-.btn-ghost {
+.btn-ghost,
+.contact-links a.btn-ghost {
   background: transparent;
-  color: var(--accent);
+  color: var(--text-secondary);
   border: 1px solid var(--border);
 }
 
-.btn-ghost:hover {
-  border-color: var(--accent);
-  background: var(--accent-glow);
+.btn-ghost:hover,
+.contact-links a.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--text);
+  text-decoration: none;
 }
 
-/* Hero Portrait Card (PDF Cover Gold Ring Style) */
+/* Hero Portrait Frame — Exact Match to PDF Page 1 Cover Gold Ring */
 .hero-visual {
   display: flex;
   flex-direction: column;
@@ -513,12 +537,12 @@ button {
 
 .portrait-frame {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 276px;
+  height: 276px;
   border-radius: 50%;
-  padding: 6px;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(245, 158, 11, 0.2);
+  padding: 5px;
+  background: var(--gold);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
 }
 
 .portrait-frame img {
@@ -532,14 +556,14 @@ button {
 .portrait-telemetry-badge {
   position: absolute;
   bottom: 8px;
-  right: -10px;
-  background: rgba(11, 17, 32, 0.92);
-  backdrop-filter: blur(8px);
+  right: -6px;
+  background: var(--surface);
   border: 1px solid var(--border-gold);
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
   color: var(--gold-light);
   box-shadow: var(--shadow-card);
 }
@@ -549,37 +573,24 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 44px;
+  margin-top: 48px;
 }
 
 .stat-card {
-  background: var(--surface-glass);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px 22px;
   position: relative;
-  overflow: hidden;
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
 
 .stat-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-2px);
-}
-
-.stat-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--gold), var(--accent));
+  border-color: var(--border-gold);
 }
 
 .stat-value {
-  font-family: var(--font-mono);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: var(--text);
   line-height: 1.15;
@@ -587,25 +598,25 @@ button {
 }
 
 .stat-label {
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--gold-light);
 }
 
 .stat-sub {
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   color: var(--muted);
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 /* ==========================================================================
-   06. ABOUT ME & ENGINEERING PROFILE SECTION
+   06. ABOUT ME & ENGINEERING IDENTITY SECTION (PDF PAGE 2)
    ========================================================================== */
 .about-card {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 32px;
-  background: var(--surface-glass);
+  grid-template-columns: 230px 1fr;
+  gap: 36px;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 32px;
@@ -616,7 +627,7 @@ button {
 .about-photo-wrap {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 2px solid var(--border-gold);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
   aspect-ratio: 4 / 5;
 }
@@ -628,39 +639,39 @@ button {
 }
 
 .about-body h3 {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   margin-bottom: 12px;
   color: var(--text);
 }
 
 .about-body p {
   color: var(--text-secondary);
-  margin-bottom: 16px;
-  font-size: 0.98rem;
+  margin-bottom: 14px;
+  font-size: 0.96rem;
 }
 
 .about-pillars {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .pillar-chip {
-  font-family: var(--font-mono);
   font-size: 0.78rem;
-  padding: 5px 12px;
+  font-weight: 500;
+  padding: 5px 13px;
   border-radius: 999px;
   background: var(--surface-card-inner);
-  border: 1px solid var(--border-accent);
-  color: var(--accent);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
 }
 
 /* ==========================================================================
-   07. INTERACTIVE "SIM-TO-REAL" SYSTEM ARCHITECTURE EXPLORER
+   07. INTERACTIVE SYSTEM ARCHITECTURE EXPLORER
    ========================================================================== */
 .explorer-box {
-  background: var(--surface-glass);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 28px;
@@ -671,7 +682,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 16px;
 }
@@ -680,46 +691,41 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: var(--radius-md);
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
   color: var(--muted);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .explorer-tab:hover {
   color: var(--text);
-  border-color: var(--border-accent);
+  border-color: var(--border-gold);
 }
 
 .explorer-tab.active {
-  background: var(--accent-glow);
-  color: var(--accent);
-  border-color: var(--accent);
-  box-shadow: var(--shadow-glow);
+  background: var(--gold-surface);
+  color: var(--gold-light);
+  border-color: var(--gold);
 }
 
 .explorer-header-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 12px;
   margin-bottom: 20px;
 }
 
 .explorer-header-meta h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--text);
+  margin-bottom: 4px;
 }
 
 .explorer-header-meta p {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 .explorer-pipeline {
@@ -733,12 +739,12 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 18px;
-  position: relative;
 }
 
 .pipeline-stage-num {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
+  font-weight: 600;
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -747,8 +753,8 @@ button {
 }
 
 .pipeline-stage h4 {
-  font-size: 0.98rem;
-  color: var(--accent);
+  font-size: 0.96rem;
+  color: var(--text);
   margin-bottom: 10px;
 }
 
@@ -766,19 +772,19 @@ button {
 }
 
 .pipeline-stage li::before {
-  content: "▸";
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--gold);
 }
 
 /* ==========================================================================
-   08. PROJECT FILTER BAR & ENGINEERING SHOWCASE CARDS
+   08. PROJECT FILTER BAR & ENGINEERING CASE STUDY CARDS
    ========================================================================== */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 28px;
 }
 
@@ -786,32 +792,35 @@ button {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--muted);
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 0.86rem;
-  font-weight: 600;
+  padding: 7px 15px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .filter-btn:hover {
   color: var(--text);
-  border-color: var(--border-accent);
+  border-color: var(--border-gold);
 }
 
 .filter-btn.active {
-  background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
+  background: var(--gold);
+  color: #0b111e;
+  border-color: var(--gold);
+  font-weight: 600;
 }
 
 .filter-count {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  opacity: 0.85;
+  font-size: 0.73rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .projects-grid {
@@ -821,7 +830,7 @@ button {
 }
 
 .card {
-  background: var(--surface-glass);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -841,16 +850,15 @@ button {
 
 .card:hover,
 .card:focus-visible {
-  border-color: var(--accent);
-  transform: translateY(-5px);
+  border-color: var(--gold);
+  transform: translateY(-4px);
   background: var(--surface-hover);
-  box-shadow: var(--shadow-glow), var(--shadow-card);
   outline: none;
 }
 
 .card-cover {
   position: relative;
-  height: 195px;
+  height: 196px;
   width: 100%;
   overflow: hidden;
   background: var(--surface-card-inner);
@@ -861,23 +869,23 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 400ms ease;
+  transition: transform 350ms ease;
 }
 
 .card:hover .card-cover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
+/* PDF Page 4 Project Numbering Style (01..08 in Warm Gold) */
 .card-code-overlay {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(7, 11, 20, 0.86);
-  backdrop-filter: blur(6px);
+  background: rgba(14, 22, 38, 0.9);
   border: 1px solid var(--border-gold);
   color: var(--gold-light);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: var(--radius-sm);
@@ -887,10 +895,9 @@ button {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(7, 11, 20, 0.86);
-  backdrop-filter: blur(6px);
-  border: 1px solid var(--border-accent);
-  color: var(--accent);
+  background: rgba(14, 22, 38, 0.9);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   padding: 3px 8px;
@@ -898,7 +905,7 @@ button {
 }
 
 .card-body {
-  padding: 20px 22px 16px;
+  padding: 20px 22px 14px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -907,33 +914,32 @@ button {
 .badge {
   display: inline-flex;
   align-items: center;
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 600;
-  color: var(--accent);
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  padding: 4px 10px;
+  color: var(--gold-light);
+  background: var(--gold-surface);
+  border: 1px solid var(--border-gold);
+  padding: 3px 10px;
   border-radius: 999px;
   margin-bottom: 10px;
   width: fit-content;
 }
 
 .card h3 {
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--text);
-  line-height: 1.3;
+  line-height: 1.32;
 }
 
 .card p {
   color: var(--muted);
-  font-size: 0.91rem;
+  font-size: 0.9rem;
   margin-bottom: 14px;
   flex-grow: 1;
 }
 
-/* Quantitative Metric Chips on Project Cards */
 .card-metrics {
   display: flex;
   flex-wrap: wrap;
@@ -944,10 +950,10 @@ button {
 .metric-chip {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--gold-light);
-  background: var(--gold-surface);
-  border: 1px solid var(--border-gold);
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--surface-card-inner);
+  border: 1px solid var(--border);
   padding: 3px 8px;
   border-radius: var(--radius-sm);
 }
@@ -967,9 +973,8 @@ button {
 }
 
 .tag {
-  font-family: var(--font-mono);
   font-size: 0.73rem;
-  color: var(--text-secondary);
+  color: var(--muted);
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
   padding: 3px 8px;
@@ -977,67 +982,64 @@ button {
 }
 
 .card-inspect-link {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--gold-light);
   white-space: nowrap;
 }
 
 /* ==========================================================================
-   09. TECHNICAL COMPETENCIES MATRIX (6-DOMAIN SKILL CARDS)
+   09. TECHNICAL COMPETENCIES MATRIX (6-DOMAIN SVG SKILL CARDS — PDF PAGE 3)
    ========================================================================== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 20px;
 }
 
 .skill-card {
-  background: var(--surface-glass);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 22px;
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
-  position: relative;
+  padding: 24px;
+  transition: border-color var(--transition-fast);
 }
 
 .skill-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-3px);
+  border-color: var(--border-gold);
 }
 
 .skill-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 12px;
 }
 
+/* Matches PDF Page 3 Dark Navy Circle Icon Container */
 .skill-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background: var(--accent-glow);
-  border: 1px solid var(--border-accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-card-inner);
+  border: 1px solid var(--border-gold);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  color: var(--accent);
+  color: var(--gold-light);
   flex-shrink: 0;
 }
 
 .skill-card h3 {
   font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text);
-  margin-bottom: 4px;
 }
 
 .skill-card p {
   color: var(--muted);
   font-size: 0.88rem;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .skill-badges {
@@ -1047,9 +1049,8 @@ button {
 }
 
 .skill-badge {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  padding: 4px 9px;
+  font-size: 0.75rem;
+  padding: 3px 9px;
   border-radius: var(--radius-sm);
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
@@ -1065,12 +1066,12 @@ button {
   border-left: 2px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .timeline-item {
   position: relative;
-  background: var(--surface-glass);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px 24px;
@@ -1091,7 +1092,6 @@ button {
   border-radius: 50%;
   background: var(--gold);
   border: 3px solid var(--bg);
-  box-shadow: 0 0 10px var(--gold);
 }
 
 .timeline-meta {
@@ -1105,21 +1105,22 @@ button {
 .timeline-period {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--gold);
+  font-weight: 600;
+  color: var(--gold-light);
 }
 
 .timeline-tag {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  color: var(--accent);
-  background: var(--accent-glow);
-  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--surface-card-inner);
+  border: 1px solid var(--border);
+  padding: 2px 9px;
   border-radius: var(--radius-sm);
 }
 
 .timeline-item h3 {
-  font-size: 1.08rem;
+  font-size: 1.06rem;
   color: var(--text);
   margin-bottom: 6px;
 }
@@ -1130,84 +1131,105 @@ button {
 }
 
 /* ==========================================================================
-   11. CONTACT COMMAND CENTER & QUICK-COPY TOAST NOTIFICATION
+   11. CONTACT SECTION (PDF PAGE 20 STYLE WITH CLICKABLE SVG ICON CIRCLES)
    ========================================================================== */
 .contact-box {
-  background: linear-gradient(145deg, rgba(17, 24, 39, 0.92), rgba(11, 17, 32, 0.96));
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 44px 36px;
-  text-align: center;
-  margin-top: 20px;
+  text-align: left;
   box-shadow: var(--shadow-card);
-  position: relative;
-  overflow: hidden;
 }
 
 .contact-box h2 {
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
-  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-weight: 800;
+  margin: 8px 0 10px;
+  color: var(--text);
 }
 
-.contact-box p {
+.contact-box > p {
   color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto 28px;
+  max-width: 640px;
+  margin-bottom: 28px;
+  font-size: 0.98rem;
 }
 
+/* 2x2 Clean Contact Grid preventing Mid-Word Line Wrapping */
 .contact-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin-bottom: 24px;
-  text-align: left;
+  margin-bottom: 28px;
 }
 
 .contact-card-item {
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
 }
 
 .contact-card-item:hover {
-  border-color: var(--accent);
+  border-color: var(--gold);
+  background: var(--surface-hover);
   transform: translateY(-2px);
 }
 
+/* Gold Circle Badge with Dark Navy Vector Icon — Direct Match to PDF Page 20 */
+.contact-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #0e1626;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.contact-card-item:hover .contact-icon-circle {
+  background: var(--gold-light);
+  transform: scale(1.05);
+}
+
+.contact-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .contact-card-label {
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
+  font-size: 0.72rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: var(--gold);
-  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
 }
 
 .contact-card-value {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
-  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-links {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-}
-
-.contact-links a {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.contact-links a:hover {
-  text-decoration: underline;
+  gap: 12px;
 }
 
 .copy-toast {
@@ -1215,12 +1237,12 @@ button {
   bottom: 24px;
   right: 24px;
   background: var(--surface);
-  border: 1px solid var(--emerald);
+  border: 1px solid var(--gold);
   color: var(--text);
   padding: 10px 18px;
   border-radius: var(--radius-md);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+  font-weight: 500;
   box-shadow: var(--shadow-modal);
   z-index: 90;
   opacity: 0;
@@ -1236,11 +1258,11 @@ button {
 
 .footer {
   text-align: center;
-  padding: 40px 24px;
+  padding: 36px 24px;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   border-top: 1px solid var(--border);
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 /* ==========================================================================
@@ -1263,14 +1285,14 @@ button {
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(3, 6, 14, 0.84);
-  backdrop-filter: blur(8px);
+  background: rgba(6, 10, 19, 0.85);
+  backdrop-filter: blur(6px);
 }
 
 .modal-content {
   position: relative;
   background: var(--surface);
-  border: 1px solid var(--border-accent);
+  border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   max-width: 920px;
   width: 100%;
@@ -1300,7 +1322,7 @@ button {
   height: 36px;
   border-radius: 50%;
   color: var(--muted);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
   display: inline-flex;
@@ -1311,8 +1333,7 @@ button {
 
 .modal-close:hover {
   color: var(--text);
-  border-color: var(--accent);
-  background: var(--surface-hover);
+  border-color: var(--gold);
 }
 
 .modal-content h3 {
@@ -1323,11 +1344,10 @@ button {
 
 .modal-summary {
   color: var(--text-secondary);
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   margin: 10px 0 22px;
 }
 
-/* Modal Visual Gallery & Thumbnails */
 .modal-gallery {
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
@@ -1340,7 +1360,7 @@ button {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #050811;
+  background: #080d17;
   max-height: 380px;
   display: flex;
   align-items: center;
@@ -1356,8 +1376,7 @@ button {
 }
 
 .gallery-caption {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
   text-align: center;
   margin-top: 10px;
@@ -1387,7 +1406,7 @@ button {
 .gallery-thumb:hover,
 .gallery-thumb.active {
   opacity: 1;
-  border-color: var(--accent);
+  border-color: var(--gold);
 }
 
 .gallery-thumb img {
@@ -1396,7 +1415,6 @@ button {
   object-fit: cover;
 }
 
-/* Modal Architecture Flow Blocks (Sensors -> Fusion -> Outputs / 4 Phases) */
 .arch-flow-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1407,17 +1425,16 @@ button {
 .arch-node {
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid var(--gold);
   border-radius: var(--radius-md);
   padding: 14px 16px;
 }
 
 .arch-node h5 {
-  font-family: var(--font-mono);
   font-size: 0.84rem;
-  color: var(--accent);
+  font-weight: 700;
+  color: var(--gold-light);
   margin-bottom: 8px;
-  text-transform: uppercase;
 }
 
 .arch-node ul {
@@ -1430,7 +1447,6 @@ button {
   margin-bottom: 4px;
 }
 
-/* Signature "MY CONTRIBUTION" Gold Callout Box (Matching PDF Design) */
 .contribution-callout {
   background: var(--gold-surface);
   border: 1px solid var(--border-gold);
@@ -1441,10 +1457,10 @@ button {
 }
 
 .contribution-callout h4 {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--gold-light);
   margin-bottom: 6px;
 }
@@ -1454,21 +1470,21 @@ button {
   color: var(--text);
 }
 
-/* Engineering Challenges & Solutions Block */
 .challenges-box {
-  background: rgba(15, 23, 42, 0.75);
+  background: var(--surface-card-inner);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--steel);
   border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 22px;
 }
 
 .challenges-box h4 {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--accent);
+  letter-spacing: 0.1em;
+  color: var(--steel);
   margin-bottom: 8px;
 }
 
@@ -1482,7 +1498,6 @@ button {
   margin-bottom: 6px;
 }
 
-/* Technical Specifications & Benchmark Comparison Tables (MonTech & NLP BERT) */
 .spec-table-wrap {
   overflow-x: auto;
   margin-bottom: 22px;
@@ -1500,9 +1515,10 @@ button {
 .spec-table th {
   background: var(--surface-card-inner);
   color: var(--gold-light);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
 }
@@ -1524,11 +1540,11 @@ button {
 }
 
 .modal-block h4 {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
   margin-bottom: 10px;
 }
 
@@ -1543,7 +1559,6 @@ button {
   margin-bottom: 7px;
 }
 
-/* Modal Footer Navigation (Prev / Next Project + PDF Deep-Link) */
 .modal-footer-nav {
   display: flex;
   justify-content: space-between;
@@ -1595,10 +1610,10 @@ button {
 
   .nav-actions {
     position: fixed;
-    top: 70px;
+    top: 72px;
     left: 0;
     right: 0;
-    background: rgba(7, 11, 20, 0.97);
+    background: rgba(14, 22, 38, 0.98);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     padding: 20px 24px;
@@ -1632,6 +1647,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
   .modal-content {
     padding: 22px 18px;
   }
@@ -1644,6 +1663,10 @@ button {
 
   .cta-group .btn {
     width: 100%;
+  }
+
+  .contact-card-value {
+    font-size: 0.85rem;
   }
 
   .modal-footer-nav {

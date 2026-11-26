@@ -19,14 +19,14 @@
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(3, 6, 14, 0.84);
-  backdrop-filter: blur(8px);
+  background: rgba(6, 10, 19, 0.85);
+  backdrop-filter: blur(6px);
 }
 
 .modal-content {
   position: relative;
   background: var(--surface);
-  border: 1px solid var(--border-accent);
+  border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   max-width: 920px;
   width: 100%;
@@ -56,7 +56,7 @@
   height: 36px;
   border-radius: 50%;
   color: var(--muted);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
   display: inline-flex;
@@ -67,8 +67,7 @@
 
 .modal-close:hover {
   color: var(--text);
-  border-color: var(--accent);
-  background: var(--surface-hover);
+  border-color: var(--gold);
 }
 
 .modal-content h3 {
@@ -79,11 +78,10 @@
 
 .modal-summary {
   color: var(--text-secondary);
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   margin: 10px 0 22px;
 }
 
-/* Modal Visual Gallery & Thumbnails */
 .modal-gallery {
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
@@ -96,7 +94,7 @@
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #050811;
+  background: #080d17;
   max-height: 380px;
   display: flex;
   align-items: center;
@@ -112,8 +110,7 @@
 }
 
 .gallery-caption {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
   text-align: center;
   margin-top: 10px;
@@ -143,7 +140,7 @@
 .gallery-thumb:hover,
 .gallery-thumb.active {
   opacity: 1;
-  border-color: var(--accent);
+  border-color: var(--gold);
 }
 
 .gallery-thumb img {
@@ -152,7 +149,6 @@
   object-fit: cover;
 }
 
-/* Modal Architecture Flow Blocks (Sensors -> Fusion -> Outputs / 4 Phases) */
 .arch-flow-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -163,17 +159,16 @@
 .arch-node {
   background: var(--surface-card-inner);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid var(--gold);
   border-radius: var(--radius-md);
   padding: 14px 16px;
 }
 
 .arch-node h5 {
-  font-family: var(--font-mono);
   font-size: 0.84rem;
-  color: var(--accent);
+  font-weight: 700;
+  color: var(--gold-light);
   margin-bottom: 8px;
-  text-transform: uppercase;
 }
 
 .arch-node ul {
@@ -186,7 +181,6 @@
   margin-bottom: 4px;
 }
 
-/* Signature "MY CONTRIBUTION" Gold Callout Box (Matching PDF Design) */
 .contribution-callout {
   background: var(--gold-surface);
   border: 1px solid var(--border-gold);
@@ -197,10 +191,10 @@
 }
 
 .contribution-callout h4 {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--gold-light);
   margin-bottom: 6px;
 }
@@ -210,21 +204,21 @@
   color: var(--text);
 }
 
-/* Engineering Challenges & Solutions Block */
 .challenges-box {
-  background: rgba(15, 23, 42, 0.75);
+  background: var(--surface-card-inner);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--steel);
   border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 22px;
 }
 
 .challenges-box h4 {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--accent);
+  letter-spacing: 0.1em;
+  color: var(--steel);
   margin-bottom: 8px;
 }
 
@@ -238,7 +232,6 @@
   margin-bottom: 6px;
 }
 
-/* Technical Specifications & Benchmark Comparison Tables (MonTech & NLP BERT) */
 .spec-table-wrap {
   overflow-x: auto;
   margin-bottom: 22px;
@@ -256,9 +249,10 @@
 .spec-table th {
   background: var(--surface-card-inner);
   color: var(--gold-light);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
 }
@@ -280,11 +274,11 @@
 }
 
 .modal-block h4 {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
   margin-bottom: 10px;
 }
 
@@ -299,7 +293,6 @@
   margin-bottom: 7px;
 }
 
-/* Modal Footer Navigation (Prev / Next Project + PDF Deep-Link) */
 .modal-footer-nav {
   display: flex;
   justify-content: space-between;
@@ -351,10 +344,10 @@
 
   .nav-actions {
     position: fixed;
-    top: 70px;
+    top: 72px;
     left: 0;
     right: 0;
-    background: rgba(7, 11, 20, 0.97);
+    background: rgba(14, 22, 38, 0.98);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     padding: 20px 24px;
@@ -388,6 +381,10 @@
     grid-template-columns: 1fr;
   }
 
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
   .modal-content {
     padding: 22px 18px;
   }
@@ -400,6 +397,10 @@
 
   .cta-group .btn {
     width: 100%;
+  }
+
+  .contact-card-value {
+    font-size: 0.85rem;
   }
 
   .modal-footer-nav {

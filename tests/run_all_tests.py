@@ -371,6 +371,25 @@ def run_test_suite():
         f"{http_200_count}/{len(endpoints_to_test)} endpoints returned HTTP 200 OK with non-zero payload"
     ))
 
+    # -------------------------------------------------------------------------
+    # PHASE 7 TESTS: Senior Editorial Refinement, Zero-Emoji & Contrast Audit
+    # -------------------------------------------------------------------------
+    emoji_pattern = re.compile(r"[\U0001F300-\U0001FAFF\u2600-\u27BF]")
+    with open("js/data.js", "r", encoding="utf-8") as f:
+        data_text = f.read()
+    emojis_in_data = emoji_pattern.findall(data_text)
+    emojis_in_html = emoji_pattern.findall(html)
+    has_full_name_brand = '<span class="brand-name">Muhammed Enes BAL</span>' in html
+    has_contact_svg_circles = html.count('class="contact-icon-circle"') == 4
+    has_btn_contrast_fix = ".contact-links a.btn-primary" in css and "word-break: break-all" not in css
+
+    results.append((
+        "TC-P7-01",
+        "Senior Human-Crafted Refinement (Zero Emojis, Full-Name Brand, Contact SVG Icons & Button Contrast Fix)",
+        len(emojis_in_data) == 0 and len(emojis_in_html) == 0 and has_full_name_brand and has_contact_svg_circles and has_btn_contrast_fix,
+        f"Emojis in data/html={len(emojis_in_data)}/{len(emojis_in_html)}, FullNameBrand={has_full_name_brand}, ContactSVGCircles=4, ContrastFix={has_btn_contrast_fix}"
+    ))
+
     all_passed = all(r[2] for r in results)
     print("=" * 88)
     print("MUHAMMED ENES BAL PORTFOLIO — FULL E2E QA & MODULAR ARCHITECTURE AUDIT REPORT")

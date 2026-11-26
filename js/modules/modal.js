@@ -162,8 +162,8 @@ function populateCaseStudyModal(project, galleryIdx, lang, onGalleryIndexChange)
     pdfLinkEl.href = `${pdfBase}${pageSuffix}`;
     const pageText =
       lang === "tr"
-        ? `📄 PDF Portfolyoda Bu Projeyi Aç (Sayfa ${project.pdfPage})`
-        : `📄 Open This Project in PDF Portfolio (Page ${project.pdfPage})`;
+        ? `PDF Portfolyoda Görüntüle (Sayfa ${project.pdfPage})`
+        : `View in PDF Portfolio (Page ${project.pdfPage})`;
     pdfLinkEl.textContent = pageText;
   }
 }
