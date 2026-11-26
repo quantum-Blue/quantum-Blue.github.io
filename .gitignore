@@ -1,0 +1,7 @@
+# Editor & OS temporary directories
+.history/
+.vscode/
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
